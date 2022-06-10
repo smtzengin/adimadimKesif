@@ -13,7 +13,12 @@ public class InputManager : MonoBehaviour
 
     private void OnMouseDown()
     {
-        Vector3 mousePos = this.transform.position;
-        player.GetComponent<PlayerMovementController>().Move(mousePos, .5f);
+
+        if (this.transform.position.z > player.transform.position.z && this.transform.position.z < player.transform.position.z+2)
+        {
+            Vector3 mousePos = this.transform.position;
+            player.GetComponent<PlayerMovementController>().Move(mousePos, .2f);
+        }
+        
     }
 }

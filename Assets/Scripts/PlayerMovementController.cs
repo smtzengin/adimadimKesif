@@ -5,20 +5,21 @@ using DG.Tweening;
 
 public class PlayerMovementController : MonoBehaviour
 {
+    Animator anim;
 
     bool isMove;
 
     Vector3 whichDirection;
 
     Quaternion returnDirection;
+  
 
-    private void Start()
+    private void Awake()
     {
-
-        
+        anim = GetComponent<Animator>();
     }
 
-    public void Move(Vector3 targetPos, float delayTime = 0.2f)
+    public void Move(Vector3 targetPos, float delayTime = 0.25f)
     {
         if (!isMove)
         {
@@ -35,7 +36,9 @@ public class PlayerMovementController : MonoBehaviour
 
         returnDirection = Quaternion.LookRotation(whichDirection);
 
-        transform.DORotateQuaternion(returnDirection, .2f);
+        transform.DORotateQuaternion(returnDirection, .25f);
+
+        anim.SetBool("isMove", true);
 
         yield return new WaitForSeconds(delayTime);
 
@@ -45,6 +48,7 @@ public class PlayerMovementController : MonoBehaviour
         {
             yield return null;
         }
+        anim.SetBool("isMove", false);
 
         returnDirection = Quaternion.LookRotation(Vector3.zero);
         transform.DORotateQuaternion(returnDirection, .1f);
@@ -52,5 +56,6 @@ public class PlayerMovementController : MonoBehaviour
         this.transform.position = targetPos;
 
         isMove = false;
+        
     }
 }
