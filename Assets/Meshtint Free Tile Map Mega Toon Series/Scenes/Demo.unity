@@ -393,6 +393,7 @@ GameObject:
   - component: {fileID: 288257019}
   - component: {fileID: 288257021}
   - component: {fileID: 288257020}
+  - component: {fileID: 288257022}
   m_Layer: 5
   m_Name: questionsBackImg
   m_TagString: Untagged
@@ -460,6 +461,29 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 288257018}
   m_CullTransparentMesh: 1
+--- !u!114 &288257022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 288257018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c7c8226e7efe32499b251384a469848, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  questionsList:
+  - questions: ben bir soruyum
+    answers:
+    - "E\u011Frelti otu"
+    - Solucan
+    - Amip
+    trueAnswer: C
+  questionTxt: {fileID: 1247302303}
+  answerPrefab: {fileID: 8968621354188384328, guid: 82630029bca998442a2414be45e28b86, type: 3}
+  answerContainer: {fileID: 866947866}
+  trueAnswer: 
 --- !u!1001 &364760344
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1625,7 +1649,7 @@ GameObject:
   - component: {fileID: 866947868}
   - component: {fileID: 866947869}
   m_Layer: 5
-  m_Name: askPanel
+  m_Name: answerPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2653,6 +2677,7 @@ GameObject:
   - component: {fileID: 1247302302}
   - component: {fileID: 1247302304}
   - component: {fileID: 1247302303}
+  - component: {fileID: 1247302305}
   m_Layer: 5
   m_Name: questionsText
   m_TagString: Untagged
@@ -2777,6 +2802,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1247302301}
   m_CullTransparentMesh: 1
+--- !u!225 &1247302305
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1247302301}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1001 &1260819193
 PrefabInstance:
   m_ObjectHideFlags: 0

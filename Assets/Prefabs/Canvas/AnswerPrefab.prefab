@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7495567728248365738}
   - component: {fileID: 3771449016144504429}
   m_Layer: 5
-  m_Name: askTxt
+  m_Name: answerTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -75,8 +75,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278729727
-  m_fontColor: {r: 1, g: 0.2328891, b: 0.033018887, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -210,8 +210,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278729727
-  m_fontColor: {r: 1, g: 0.2328891, b: 0.033018887, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -282,7 +282,7 @@ GameObject:
   - component: {fileID: 7878386629758312687}
   - component: {fileID: 3036516266032368475}
   m_Layer: 5
-  m_Name: AskPrefab
+  m_Name: AnswerPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
