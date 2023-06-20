@@ -283,7 +283,7 @@ GameObject:
   - component: {fileID: 3036516266032368475}
   m_Layer: 5
   m_Name: AnswerPrefab
-  m_TagString: Untagged
+  m_TagString: AnswersTag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

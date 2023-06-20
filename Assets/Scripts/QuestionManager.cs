@@ -17,23 +17,28 @@ public class QuestionManager : MonoBehaviour
 
     [SerializeField] Transform answerContainer;
 
-    public string truthAnswer;
+   // public string truthAnswer; sildik. GameManger'daki cevap doðru mu seçeneðini ekleyince.
 
     int whichQuestion;
 
     int numberOfAnswers;
 
-    string[] options = { "A", "B", "C" };
+    string[] options = { "A)", "B)", "C)" };
+    GameManager gameManager;
+    private void Awake()
+    {
+        gameManager = Object.FindObjectOfType<GameManager>();
+    }
 
     private void Start()
     {
         questionsList = questionsList.OrderBy(i => Random.value).ToList(); // listedeki sorularý karýþtýrýp tekrar liste haline getiriyoruz.
 
-        PrintQuestions();
+       // PrintQuestions(); Sorularý yazdýr fonksiyonunu kapattýk.
 
     }
 
-    void PrintQuestions()
+     public void PrintQuestions()
     {
         questionTxt.text = questionsList[whichQuestion].questions;
 
@@ -44,7 +49,18 @@ public class QuestionManager : MonoBehaviour
     }
 
     void CreateAnswers()
+
     {
+      GameObject[] deleAnswers = GameObject.FindGameObjectsWithTag("AnswersTag");
+      if(deleAnswers.Length>=0)
+      {
+          for(int i = 0; i < deleAnswers.Length; i++)
+          {
+               DestroyImmediate(deleAnswers[i]);
+          }
+      } 
+
+
         for (int i = 0; i < 3; i++)
         {
             GameObject answerObject = Instantiate(answerPrefab);
@@ -58,7 +74,8 @@ public class QuestionManager : MonoBehaviour
             answerObject.GetComponent<Transform>().localScale = Vector3.zero;
         }
 
-        truthAnswer = questionsList[whichQuestion].trueAnswer;
+        // truthAnswer = questionsList[whichQuestion].trueAnswer;
+        gameManager.CorrectAnswer = questionsList[whichQuestion].trueAnswer;
 
         StartCoroutine(OpenAnswersRoutine());
 
@@ -80,5 +97,6 @@ public class QuestionManager : MonoBehaviour
 
             numberOfAnswers++;
         }
+        gameManager.QuestionsAnswermi = true;
     }
 }
