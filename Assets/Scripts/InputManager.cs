@@ -8,10 +8,13 @@ public class InputManager : MonoBehaviour
 
     GameManager gameManager;
 
+    AudioManager audioManager;
+
     public string name;
 
     private void Awake()
     {
+        audioManager = Object.FindObjectOfType<AudioManager>();
         gameManager = Object.FindObjectOfType<GameManager>();
         player = GameObject.Find("Player");
     }
@@ -27,6 +30,7 @@ public class InputManager : MonoBehaviour
             player.GetComponent<PlayerMovementController>().Move(mousePos, .2f);
             gameManager.AnswersCheckIt(name);
             gameManager.QuestionsAnswermi = false;
+            audioManager.ButonSesiCikar();
         }
         
     }

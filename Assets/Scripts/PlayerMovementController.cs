@@ -58,4 +58,15 @@ public class PlayerMovementController : MonoBehaviour
         isMove = false;
         
     }
+
+    public void PlayerMadeMistake()
+    {
+        anim.SetBool("hataYapti", true);
+    }
+
+    public void PlayerComeBack()
+    {
+        this.transform.position = Vector3.zero;
+        anim.SetBool("hataYapti", false);
+    }
 }

@@ -17,7 +17,6 @@ public class QuestionManager : MonoBehaviour
 
     [SerializeField] Transform answerContainer;
 
-   // public string truthAnswer; sildik. GameManger'daki cevap doðru mu seçeneðini ekleyince.
 
     int whichQuestion;
 
@@ -32,14 +31,13 @@ public class QuestionManager : MonoBehaviour
 
     private void Start()
     {
-        questionsList = questionsList.OrderBy(i => Random.value).ToList(); // listedeki sorularý karýþtýrýp tekrar liste haline getiriyoruz.
-
-       // PrintQuestions(); Sorularý yazdýr fonksiyonunu kapattýk.
-
-    }
+        numberOfAnswers = 0;
+        questionsList = questionsList.OrderBy(i => Random.value).ToList(); 
+            }
 
      public void PrintQuestions()
     {
+        numberOfAnswers = 0;
         questionTxt.text = questionsList[whichQuestion].questions;
 
         questionTxt.GetComponent<CanvasGroup>().alpha = 0f;
@@ -97,6 +95,8 @@ public class QuestionManager : MonoBehaviour
 
             numberOfAnswers++;
         }
+        whichQuestion++;
         gameManager.QuestionsAnswermi = true;
+
     }
 }
