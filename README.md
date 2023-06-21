@@ -6,6 +6,10 @@
 ## Demo
 
 
-<div align="center">
-<img src="https://gifyu.com/image/SQIaE" align="center" height="400" width="400" />
-</div>  
+
+
+
+https://github.com/smtzengin/adimadimKesif/assets/73519045/fa06579a-b374-493e-8b61-772a98f235c2
+
+
+
